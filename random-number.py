@@ -9,6 +9,11 @@ def game():
     while True:
         try:
             guess = int(input("Введи число: "))
+
+            if guess < 1 or guess > 100:
+                print("Число должно быть от 1 до 100!")
+                continue
+
             attempts += 1
 
             if guess < number:
@@ -39,4 +44,3 @@ def main():
             print("Неверный выбор.")
 
 main()
-
