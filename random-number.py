@@ -1,11 +1,24 @@
 import random
-n = (random.randint(1,100))
-k = int(input())
-while k!=n:
-    print('Попробуй снова.')
-    if k<n:
-        print(k, 'меньше чем загаданное число. Попробуйте число больше.')
-    elif k>n:
-        print(k, 'больше чем загаданное число. Попробуйте число меньше.')
-    k = int(input())
-print('Ты выиграл! Молодец!')
+
+def game():
+    number = random.randint(1, 100)
+    
+
+    print("Я загадал число от 1 до 100.")
+
+    while True:
+        try:
+            guess = int(input("Введи число: "))
+            
+
+            if guess < number:
+                print("Меньше чем нужно. Попробуй больше.")
+            elif guess > number:
+                print("Больше чем нужно. Попробуй меньше.")
+            else:
+                print("Ты выиграл!")
+                break
+
+        except:
+            print("Ошибка! Нужно ввести число.")
+
